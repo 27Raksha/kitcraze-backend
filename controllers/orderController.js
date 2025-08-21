@@ -8,7 +8,7 @@ const currency = 'inr'
 const deliveryCharge = 10
 
 // gateway initialize
-const stripe = new Stripe(sk_test_4eC39HqLyjWDadmmdmcrjtT1zdp7dc)
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 const razorpayInstance = new razorpay({
     key_id : rzp_test_1234567890abcdef,
@@ -233,4 +233,5 @@ const updateStatus = async (req,res) => {
 
 
 export {verifyRazorpay, verifyStripe ,placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus}
+
 
