@@ -11,8 +11,8 @@ const deliveryCharge = 10
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 const razorpayInstance = new razorpay({
-    key_id : rzp_test_1234567890abcdef,
-    key_secret : a1234567890abcdef12345678,
+   key_id : process.env.RAZORPAY_KEY_ID,
+    key_secret : process.env.RAZORPAY_KEY_SECRET,
 })
 
 // Placing orders using COD Method
@@ -233,5 +233,6 @@ const updateStatus = async (req,res) => {
 
 
 export {verifyRazorpay, verifyStripe ,placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus}
+
 
 
